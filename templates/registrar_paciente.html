@@ -1,0 +1,54 @@
+<!--NOMBRE: ALAIN MORAGA VARGAS-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Nuevo paciente</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="{{url_for('static', filename='validaciones.js')}}"></script>
+</head>
+<body>
+
+<div class="container">
+    <br>
+    <h2 style="text-align: center;">NUEVO PACIENTE</h2>
+    <br>
+    <div class="botonVolver" style="width:140px; margin:-65px 0px;">
+    <a type="button" class="btn btn-warning" href="{{url_for('listado_pacientes')}}">
+        <span class="glyphicon glyphicon-arrow-left"></span> Volver al listado
+    </a>
+    </div>
+    <form style="margin: 120px 0px;" action="" method="POST" onsubmit="return validar_paciente();">
+        <div class="form-group row">
+          <label for="nombrePaciente" class="col-sm-2 col-form-label">Nombre del paciente:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nombrePaciente" name="nombrePaciente" placeholder="">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="rutPaciente" class="col-sm-2 col-form-label">Rut del paciente:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="rutPaciente" name="rutPaciente" placeholder="">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fechaNacimiento" class="col-sm-2 col-form-label">Fecha de nacimiento:</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" placeholder="">
+            </div>
+        </div>
+        <div class="form-group row" style="margin:0px auto; width: 1000px;">
+          <div class="col-sm-10" style="width:100px; margin: 0px 450px;">
+            <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-floppy-disk"></span> 
+             Guardar </button>
+          </div>
+        </div>
+      </form>
+  </div>
+</body> 
+</html>

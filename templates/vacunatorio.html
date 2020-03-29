@@ -1,0 +1,54 @@
+<!--NOMBRE: ALAIN MORAGA VARGAS-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Vacunatorio Coelemu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="{{url_for('static', filename='datatable.js')}}"></script>
+</head>
+<body>
+
+<div class="container">
+    <br>
+    <h2>LISTADO DE PACIENTES</h2>
+    <br>          
+    <a class="btn btn-primary" href="{{url_for('nuevo_paciente')}}">
+        Nuevo paciente <span class="glyphicon glyphicon-plus"></span> 
+    </a>
+    <a class="btn btn-warning" style="float:right;" href="{{url_for('listado_vacunas')}}">
+        Listar vacunas <span class="glyphicon glyphicon-list-alt"></span>
+    </a>
+    <br>
+    <br>
+    <table class="table table-bordered" id="myTable" style="border-color: black;">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Rut</th>
+          <th>Fecha nacimiento</th>
+          <th>Vacunas</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for item in pacientes %}
+        <tr>
+          <td>{{ item['nombre_paciente'] }}</td>
+          <td>{{ item['rut_paciente'] }}</td>
+          <td>{{ item['fecha_nacimiento'] }}</td>
+          <td style="width:180px;">
+              <a href="{{url_for('vacunar_paciente',id_paciente=item['id_paciente'])}}" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a>
+              <a href="{{url_for('vacunas_paciente',id_paciente=item['id_paciente'])}}" class="btn btn-warning "> <span class="glyphicon glyphicon-eye-open"></span> Ver</a>
+          </td>
+        </tr>
+        {%endfor %}
+      </tbody>
+    </table>
+  </div>
+</body> 
+</html>

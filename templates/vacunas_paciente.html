@@ -1,0 +1,50 @@
+<!--NOMBRE: ALAIN MORAGA VARGAS-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Vacunatorio Coelemu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="{{url_for('static', filename='datatable.js')}}"></script>
+</head>
+<body>
+
+<div class="container">
+    <br>
+    <h2>VACUNAS DE PACIENTE:  {{ nombre_paciente }}</h2>
+    <br>          
+    <a type="button" class="btn btn-warning" href="{{url_for('listado_pacientes')}}">
+        <span class="glyphicon glyphicon-arrow-left"></span> Volver al listado
+    </a>
+    <br>
+    <br>
+    <table class="table table-bordered" id="myTable" style="border-color: black;">
+      <thead>
+        <tr>
+          <th>Enfermedad</th>
+          <th>Fecha de vacuna</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for item in vacunas_paciente %}
+        <tr>
+          <td>{{ item['nombre_enfermedad'] }}</td>
+          <td>{{ item['fecha_vacuna'] }}</td>
+        </tr>
+        {%endfor %}
+      </tbody>
+    </table>
+    {% if mensaje%}
+    <div class="alert alert-danger" role="alert" style="text-align: center;">
+        {{ mensaje }}
+    </div>
+    {% endif %}
+  </div>
+</body> 
+</html>
+
