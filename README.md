@@ -10,7 +10,7 @@ Se requiere tener instalado lo siguiente:
 * ```PYTHON 3.6 en adelante``` 
 * ```PIP``` 
 * ```GIT``` 
-* ```Cmder (para windows) ``` 
+* ```Cmder (Terminal para windows) ``` 
 
 Descarga del repositorio e importar base de datos
 -----------
