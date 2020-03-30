@@ -30,8 +30,8 @@ Instala los requerimientos necesarios para ejecutar el proyecto.
 
 Verificación de credenciales
 -----------
-Dentro del repositorio en el archivo * ```vacunatorio.py``` en la línea 13, 14 y 15 están las credenciales de acceso a la base de datos.
-Si su base de datos no posee contraseña, elimine la línea 15 * ```app.config["MYSQL_DATABASE_PASSWORD"]  = "1234"```, de lo contrario cambiela por su contraseña de acceso. Realice lo mismo en la línea 13 * ```app.config["MYSQL_DATABASE_USER"] = "root"``` en caso de tener otro nombre de usuario.
+Dentro del repositorio en el archivo ```vacunatorio.py``` en la línea 13, 14 y 15 están las credenciales de acceso a la base de datos.
+Si su base de datos no posee contraseña, elimine la línea 15  ```app.config["MYSQL_DATABASE_PASSWORD"]  = "1234"```, de lo contrario cambiela por su contraseña de acceso. Realice lo mismo en la línea 13  ```app.config["MYSQL_DATABASE_USER"] = "root"``` en caso de tener otro nombre de usuario.
 
 Ejecutar el proyecto
 -----------
