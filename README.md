@@ -1,4 +1,4 @@
-Proyecto semestral python
+Proyecto semestral aplicaciones web con python, Universidad del Bío-Bío
 ================================================
 Este proyecto consta de un pequeño sistema web para administrar pacientes e inventario de vacunas
 para el vacunatorio de la localidad de Coelemu, Región del Ñuble, Chile.
